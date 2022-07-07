@@ -1,4 +1,3 @@
-// import hre, { artifacts, ethers } from "hardhat";
 import { ContractFactory, utils } from "ethers";
 
 const args = process.argv.slice(2);

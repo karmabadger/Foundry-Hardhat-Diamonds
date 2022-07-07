@@ -9,38 +9,15 @@
     "rootDir": "./",
     "baseUrl": "./",
     "paths": {
-      "@src/*": [
-        "src/*"
-      ],
-      "@utils/*": [
-        "./utils/*"
-      ],
-      "@scripts/*": [
-        "./scripts/*"
-      ],
-      "@tests/*": [
-        "tests/*"
-      ],
-      "@customTypes/*": [
-        "./types/*"
-      ],
-      "@utils/": [
-        "./utils/*"
-      ],
-      "@migrations/*": [
-        "./migrations/*"
-      ],
-      "@typechain-types/*": [
-        "./typechain-types/*"
-      ]
+      "@src/*": ["src/*"],
+      "@utils/*": ["./utils/*"],
+      "@scripts/*": ["./scripts/*"],
+      "@tests/*": ["tests/*"],
+      "@customTypes/*": ["./types/*"],
+      "@utils/": ["./utils/*"],
+      "@migrations/*": ["./migrations/*"],
+      "@typechain-types/*": ["./typechain-types/*"]
     }
   },
-  "include": [
-    "./scripts",
-    "./test",
-    "./typechain"
-  ],
-  "files": [
-    "./hardhat.config.ts"
-  ]
+  "include": ["./scripts", "./test", "./typechain"]
 }

@@ -58,7 +58,11 @@ contract DiamondDeployer is Test, IDiamondCut {
 
   function testOwner() public {
     // console.log(IERC173(address(this)).owner());
-    assert(IERC173(address(this)).owner() == address(ownerF));
+    console.log(
+      "selector owner()",
+      uint256(uint32(IERC173(address(this)).owner.selector))
+    );
+    assert(IERC173(address(this)).owner() == address(OWNER));
   }
 
   function generateSelectors(string memory _facetName)

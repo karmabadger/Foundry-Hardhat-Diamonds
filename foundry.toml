@@ -2,7 +2,6 @@
 out = 'out'                   # output directory conflicts with dapptools
 libs = ['lib', "node_modules"]
 auto_detect_solc = true
-# solc_version = '0.8.14'
 remappings = [
     '@utils/=src/utils/',
     '@openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/',
@@ -14,16 +13,12 @@ remappings = [
 ffi = true
 verbosity = 5
 optimizer = false
-# optimizer = true
-# optimizer_runs = 100
-# via_ir = true
 
 
 [build]
 out = 'bout'                   # output directory conflicts with dapptools
 libs = ['lib', "node_modules"]
 auto_detect_solc = true
-# solc_version = '0.8.14'
 remappings = [
     '@utils/=src/utils/',
     '@openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/',
