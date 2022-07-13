@@ -1,17 +1,41 @@
 [default]
-src = 'contracts'
-out = 'out'
-libs = [
-    'lib'
-]
+out = 'out'                   # output directory conflicts with dapptools
+libs = ['lib', "node_modules"]
+auto_detect_solc = true
+# solc_version = '0.8.14'
 remappings = [
+    '@utils/=src/utils/',
+    '@openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/',
     '@contracts/=src/contracts/',
     '@openzeppelin/=lib/openzeppelin-contracts/',
-    'ds-test/=lib/ds-test/src/',
     'openzeppelin-contracts/=lib/openzeppelin-contracts/',
     "@forge-std/=lib/forge-std/src/",
 ]
-ffi=true
-verbosity=5
+ffi = true
+verbosity = 5
+optimizer = false
+# optimizer = true
+# optimizer_runs = 100
+# via_ir = true
 
-# See more config options https://github.com/foundry-rs/foundry/tree/master/config
+
+[build]
+out = 'bout'                   # output directory conflicts with dapptools
+libs = ['lib', "node_modules"]
+auto_detect_solc = true
+# solc_version = '0.8.14'
+remappings = [
+    '@utils/=src/utils/',
+    '@openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/',
+    '@contracts/=src/contracts/',
+    '@openzeppelin/=lib/openzeppelin-contracts/',
+    'openzeppelin-contracts/=lib/openzeppelin-contracts/',
+    "@forge-std/=lib/forge-std/src/",
+]
+ffi = true
+verbosity = 5
+optimizer = false
+optimizer_runs = 10
+via_ir = true
+
+# See more config options https://github.com/gakonst/foundry/tree/master/config

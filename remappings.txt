@@ -1,6 +1,7 @@
+@openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/
 @openzeppelin/=lib/openzeppelin-contracts/
-ds-test/=lib/ds-test/src/
-@contracts/=src/contracts/
-@test/=src/tests/
-@cheatcodes/=src/cheatcodes/
+@test/=tests/
+@contracts/=contracts/
+@uniswap/=node_modules/@uniswap/
+@utils/=contracts/utils
 @forge-std/=lib/forge-std/src/

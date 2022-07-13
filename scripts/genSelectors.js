@@ -1,5 +1,7 @@
 const { artifacts, ethers } = require('hardhat')
 const hre = require('hardhat')
+// import { ethers } from "ethers"
+
 const args = process.argv.slice(2)
 
 if (args.length != 1) {
