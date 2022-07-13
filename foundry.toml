@@ -4,6 +4,13 @@ out = 'out'
 libs = [
     'lib'
 ]
+remappings = [
+    '@contracts/=src/contracts/',
+    '@openzeppelin/=lib/openzeppelin-contracts/',
+    'ds-test/=lib/ds-test/src/',
+    'openzeppelin-contracts/=lib/openzeppelin-contracts/',
+    "@forge-std/=lib/forge-std/src/",
+]
 ffi=true
 verbosity=5
 
