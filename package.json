@@ -1,5 +1,17 @@
 {
   "name": "hardhat-project",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "forge test",
+    "t": "forge test",
+    "t:v": "forge test -v",
+    "t:vv": "forge test -vv",
+    "t:vvv": "forge test -vvv",
+    "t:vvvv": "forge test -vvvv",
+    "compile": "forge build",
+    "build": "forge build"
+  },
   "dependencies": {
     "ethers": "^5.6.9"
   },
