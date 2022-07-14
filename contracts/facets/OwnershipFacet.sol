@@ -1,21 +1,26 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import { LibDiamond } from "../libraries/LibDiamond.sol";
 import { IERC173 } from "../interfaces/IERC173.sol";
+import { LibOwnership } from "../libraries/LibOwnership.sol";
 
-import "@forge-std/Test.sol";
+abstract contract OwnershipModifers {
+  modifier onlyOwner() {
+    require(
+      msg.sender == LibOwnership.contractOwner(),
+      "Only the contract owner can call this function"
+    );
+    _;
+  }
+}
 
-contract OwnershipFacet is IERC173 {
+contract OwnershipFacet is IERC173, OwnershipModifers {
   function transferOwnership(address _newOwner) external override {
-    LibDiamond.enforceIsContractOwner();
-    LibDiamond.setContractOwner(_newOwner);
+    LibOwnership.enforceIsContractOwner();
+    LibOwnership.setContractOwner(_newOwner);
   }
 
   function owner() external view override returns (address owner_) {
-    console.log("owner");
-    address owner = LibDiamond.diamondStorage().contractOwner;
-    console.log("owner: ", owner);
-    owner_ = LibDiamond.contractOwner();
+    owner_ = LibOwnership.contractOwner();
   }
 }

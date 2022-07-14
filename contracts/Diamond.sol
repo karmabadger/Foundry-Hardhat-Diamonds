@@ -9,13 +9,12 @@ pragma solidity ^0.8.0;
 /******************************************************************************/
 
 import { LibDiamond } from "./libraries/LibDiamond.sol";
+import { LibOwnership } from "./libraries/LibOwnership.sol";
 import { IDiamondCut } from "./interfaces/IDiamondCut.sol";
-
-import "@forge-std/Test.sol";
 
 contract Diamond {
   constructor(address _contractOwner, address _diamondCutFacet) payable {
-    LibDiamond.setContractOwner(_contractOwner);
+    LibOwnership.setContractOwner(_contractOwner);
 
     // Add the diamondCut external function from the diamondCutFacet
     IDiamondCut.FacetCut[] memory cut = new IDiamondCut.FacetCut[](1);
@@ -32,8 +31,6 @@ contract Diamond {
   // Find facet for function that is called and execute the
   // function if a facet is found and return any value.
   fallback() external payable {
-    console.log("Diamond fallback", uint256(uint32(msg.sig)));
-    // console.log("Diamond fallback", uint256(calldatasize()));
     LibDiamond.DiamondStorage storage ds;
     bytes32 position = LibDiamond.DIAMOND_STORAGE_POSITION;
     // get diamond storage

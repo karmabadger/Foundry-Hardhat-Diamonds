@@ -9,6 +9,8 @@ import "@forge-std/Test.sol";
 import "../contracts/Diamond.sol";
 import "@contracts/interfaces/IERC173.sol";
 
+import "@openzeppelin/contracts/utils/Strings.sol";
+
 contract DiamondDeployer is Test, IDiamondCut {
   //contract types of facets to be deployed
   Diamond diamond;
@@ -60,9 +62,12 @@ contract DiamondDeployer is Test, IDiamondCut {
     // console.log(IERC173(address(this)).owner());
     console.log(
       "selector owner()",
-      uint256(uint32(IERC173(address(this)).owner.selector))
+      Strings.toHexString(
+        uint256(uint32(IERC173(address(this)).owner.selector)),
+        4
+      )
     );
-    assert(IERC173(address(this)).owner() == address(OWNER));
+    assert(IERC173(address(diamond)).owner() == address(OWNER));
   }
 
   function generateSelectors(string memory _facetName)
